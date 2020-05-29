@@ -46,7 +46,7 @@ class Menu:
                 self.display_surface.blit(self.start, (225,320))
 
 
-                self.stop = self.buttons_font.render('Stop', True, (255, 255, 255))
+                self.stop = self.buttons_font.render('Exit', True, (255, 255, 255))
                 pygame.draw.rect( self.display_surface, pygame.Color( 'black' ), (945, 320, 200, 50), 0 )
                 self.display_surface.blit(self.stop, (945, 320))
                 pygame.display.update()
