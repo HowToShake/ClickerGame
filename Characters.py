@@ -3,7 +3,7 @@ import pygame
 
 class Characters:
 
-    def __init__(self, counter: int=0):
+    def __init__(self, counter: int = 0):
         self.counter = counter
         self.amount_of_leon = 0
         self.price_of_leon = 25
@@ -26,13 +26,13 @@ class Characters:
         self.image_adalbert_box = pygame.image.load('./pics/Adalbert_box.png')
         self.characters = ["leon", "riko", "spider", "paczek", "katrin", "adalbert"]
 
-    def increase_counter(self, value: float=1):
+    def increase_counter(self, value: float = 1):
         self.counter += value
         return self.counter
 
     def was_bart_clicked(self, event):
         if (event.type is pygame.MOUSEBUTTONDOWN):
-            if ((pygame.mouse.get_pos()[0]>30 and pygame.mouse.get_pos()[0]<230) and (pygame.mouse.get_pos()[1]>30 and pygame.mouse.get_pos()[1]<400)):
+            if ((pygame.mouse.get_pos()[0] > 30 and pygame.mouse.get_pos()[0] < 230) and (pygame.mouse.get_pos()[1] > 30 and pygame.mouse.get_pos()[1] < 400)):
                 return True
             else:
                 return False
@@ -40,12 +40,12 @@ class Characters:
     def was_leon_clicked(self, event):
         if (event.type is pygame.MOUSEBUTTONDOWN):
             if ((pygame.mouse.get_pos()[0] >= 420 and pygame.mouse.get_pos()[0] <= 720) and (pygame.mouse.get_pos()[1] >= 30 and pygame.mouse.get_pos()[1] <= 130)):
-                    return True
+                return True
             else:
-                    return False
+                return False
 
     def buy_leon(self):
-        if  (self.counter >= self.price_of_leon):
+        if (self.counter >= self.price_of_leon):
 
             self.amount_of_leon += 1
             self.counter -= self.price_of_leon
@@ -54,26 +54,26 @@ class Characters:
     def was_riko_clicked(self, event):
         if (event.type is pygame.MOUSEBUTTONDOWN):
             if ((pygame.mouse.get_pos()[0] >= 420 and pygame.mouse.get_pos()[0] <= 720) and (pygame.mouse.get_pos()[1] >= 153 and pygame.mouse.get_pos()[1] <= 253)):
-                    return True
+                return True
             else:
-                    return False
+                return False
 
     def buy_riko(self):
-        if  (self.counter >= self.price_of_riko):
+        if (self.counter >= self.price_of_riko):
 
             self.amount_of_riko += 1
-            self.counter = self.counter - self.price_of_riko
+            self.counter -= self.price_of_riko
             self.price_of_riko += 50
 
     def was_spider_clicked(self, event):
         if (event.type is pygame.MOUSEBUTTONDOWN):
             if ((pygame.mouse.get_pos()[0] >= 420 and pygame.mouse.get_pos()[0] <= 720) and (pygame.mouse.get_pos()[1] >= 276 and pygame.mouse.get_pos()[1] <= 376)):
-                    return True
+                return True
             else:
-                    return False
+                return False
 
     def buy_spider(self):
-        if  (self.counter >= self.price_of_spider):
+        if (self.counter >= self.price_of_spider):
 
             self.amount_of_spider += 1
             self.counter -= self.price_of_spider
@@ -146,19 +146,19 @@ class Characters:
     def increase_amount_of_character(self):
         if (self.amount_of_leon > 0):
             self.increase_counter(0.5*self.amount_of_leon)
-        
+
         if (self.amount_of_riko > 0):
             self.increase_counter(self.amount_of_riko)
-        
+
         if (self.amount_of_spider > 0):
             self.increase_counter(3*self.amount_of_spider)
-        
+
         if (self.amount_of_paczek > 0):
             self.increase_counter(4*self.amount_of_paczek)
-        
+
         if (self.amount_of_katrin > 0):
             self.increase_counter(5 * self.amount_of_katrin)
-        
+
         if (self.amount_of_adalbert > 0):
             self.increase_counter(10*self.amount_of_adalbert)
 
@@ -167,9 +167,10 @@ class Characters:
         self.increase_counter((1/60)*amount)
 
     def get_image(self, character):
-        images = [self.image_of_self, self.image_leon_box , self.image_riko_box, self.image_spider_box, self.image_paczek_box ,self.image_katrin_box, self.image_adalbert_box]
+        images = [self.image_of_self, self.image_leon_box, self.image_riko_box, self.image_spider_box, self.image_paczek_box, self.image_katrin_box, self.image_adalbert_box]
+
         if (character is "all"):
-            return  images
+            return images
         elif (character is "barto"):
             return images[0]
         elif (character is "leon"):
@@ -178,14 +179,14 @@ class Characters:
             return images[2]
         elif (character is "spider"):
             return images[3]
-        elif (character is "paczek"):      
+        elif (character is "paczek"):
             return images[4]
         elif (character is "katrin"):
             return images[5]
         elif (character is "adalbert"):
             return images[6]
 
-    def get_char_info(self, mode, character): 
+    def get_char_info(self, mode, character):
 
         if(mode is "amount"):
             if(character is self.characters[0]):
@@ -218,15 +219,3 @@ class Characters:
                 return self.price_of_adalbert
             else:
                 return -1
-
-
-
-
-
-
-
-
-
-
-
-
