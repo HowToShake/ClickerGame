@@ -6,14 +6,14 @@ class Menu:
         pygame.init()
         self.width = 1240
         self.height = 480
-        self.window = pygame.display.set_mode( [self.width, self.height] )
-        self.display_surface = pygame.display.set_mode( (self.width, self.height) )
-        pygame.display.set_caption( 'Kasiasty Bartosz' )
-        self.title_font = pygame.font.SysFont( 'Veranda', 142 )
+        self.window = pygame.display.set_mode([self.width, self.height])
+        self.display_surface = pygame.display.set_mode((self.width, self.height))
+        pygame.display.set_caption('Kasiasty Bartosz')
+        self.title_font = pygame.font.SysFont('Veranda', 142)
         self.buttons_font = pygame.font.SysFont('Veranda', 50)
 
-
-
+        self.black = pygame.Color('black')
+        self.white = pygame.Color('white')
 
     def display_menu(self):
         run = True
